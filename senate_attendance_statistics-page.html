@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Senate Attendance Statistics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Mustache -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <!-- Colorbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
+    <!-- Data Tables -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="colorbox-master/colorbox-master/colorbox.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="pro-congress-113.css">
+
+</head>
+
+<body>
+    <!--Content container-->
+    <div class="container">
+        <header>
+            <div class="page_header_1">
+                <img class="image" alt="image" src="Jommans-Briefness-Search.ico">
+                <h1><a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment" class="page_logo">TGIF</a></h1>
+                <img class="image2" src="hosting.jpg" alt="LOGO">
+            </div>
+            <div class="page_header_2">
+                <i class="fa fa-envelope-o"></i>
+                <a href="mailto:info@tgif.net">info@tgif.net</a>
+            </div>
+        </header>
+
+        <!--Navigation bar-->
+        <nav class="navbar navbar-inverse nav_container">
+            <div class="container-fluid navigation-style">
+                <ul class="nav navbar-nav nav-parent">
+                    <li><a href="home-starter-page.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Congress 113</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house-starter-page.html">House</a></li>
+                            <li><a href="senate-starter-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Attendance</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house_attendance_statistics-page.html">House</a></li>
+                            <li><a href="senate_attendance_statistics-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Party Loyalty</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house-party-loyalty-page.html">House</a></li>
+                            <li><a href="senate-party-loyalty-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content_block">
+
+            <div>
+
+                <div class="content_1">
+                    <div class="some_description">
+
+                        <h2>Attendance</h2>
+                        <p class="description">The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+                        <p class="description">The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+
+                    </div>
+
+                    <div class="gen_stat_table">
+                        <div class="loader">Loading... please wait</div>
+                        <div id="floatingBarsG">
+                            <div class="blockG" id="rotateG_01"></div>
+                            <div class="blockG" id="rotateG_02"></div>
+                            <div class="blockG" id="rotateG_03"></div>
+                            <div class="blockG" id="rotateG_04"></div>
+                            <div class="blockG" id="rotateG_05"></div>
+                            <div class="blockG" id="rotateG_06"></div>
+                            <div class="blockG" id="rotateG_07"></div>
+                            <div class="blockG" id="rotateG_08"></div>
+                        </div>
+
+                        <h3>Senate at a glance</h3>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Party</th>
+                                        <th>Number of Reps</th>
+                                        <th>% Voted with Party</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="general_statistics">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_2">
+                    <div class="least_engaged_table">
+                        
+                        <h3>Least Engaged (Bottom 10% Attendance)</h3>
+
+                        <div class="table-responsive">
+                            <table id="dataTableAttendanceSenate1" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Number of Missed Votes</th>
+                                        <th>% of Missed</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="least_engaged">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="most_engaged_table">
+                        
+                        <h3>Most Engaged (Top 10% Attendance)</h3>
+
+                        <div class="table-responsive">
+                            <table id="dataTableAttendanceSenate2" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Number of Missed Votes</th>
+                                        <th>% of Missed</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="most_engaged">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy;2016 TGIF | All Rights Reserved</p>
+        </footer>
+
+    </div>
+    <!--        <script src="pro-congress-113-senate.js"></script>-->
+    <script type="text/html" id="gen-stat-template">
+
+        <tr>
+            <td>Democrats</td>
+            <td>{{number_of_democrats}}</td>
+            <td>{{votes_with_party_pct_democrats}}</td>
+        </tr>
+        <tr>
+            <td>Republicans</td>
+            <td>{{number_of_republicans}}</td>
+            <td>{{votes_with_party_pct_republicans}}</td>
+        </tr>
+        <tr>
+            <td>Independent</td>
+            <td>{{number_of_independent}}</td>
+            <td>{{votes_with_party_pct_independent}}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{total_number}}</td>
+            <td>{{votes_with_party_pct}}</td>
+        </tr>
+    </script>
+    <script type="text/html" id="attendance-loyalty-stat-template">
+
+        <tr>
+            <td><a href="{{url}}" class="iframe">{{{full_name}}}</a></td>
+            <td>{{total}}</td>
+            <td>{{pct}}</td>
+        </tr>
+    </script>
+    <script src="statistics_data.js"></script>
+</body>
+
+</html>

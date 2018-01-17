@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>House Starter Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Mustache -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <!-- Colorbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
+    <!-- Data Tables -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="colorbox-master/colorbox-master/colorbox.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="pro-congress-113.css">
+
+</head>
+
+<body>
+
+    <!--Content container-->
+    <div class="container">
+        <header>
+            <div class="page_header_1">
+                <img class="image" src="Jommans-Briefness-Search.ico">
+                <h1><a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment" class="page_logo">TGIF</a></h1>
+                <img class="image2" src="hosting.jpg" alt="LOGO">
+            </div>
+            <div class="page_header_2">
+                <i class="fa fa-envelope-o"></i>
+                <a href="mailto:info@tgif.net">info@tgif.net</a>
+            </div>
+        </header>
+
+        <!--Navigation bar-->
+        <nav class="navbar navbar-inverse nav_container">
+            <div class="container-fluid navigation-style">
+                <ul class="nav navbar-nav nav-parent">
+                    <li><a href="home-starter-page.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Congress 113</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house-starter-page.html">House</a></li>
+                            <li><a href="senate-starter-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Attendance</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house_attendance_statistics-page.html">House</a></li>
+                            <li><a href="senate_attendance_statistics-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Party Loyalty</a>
+                        <ul class="dropdown-menu dropdown-style">
+                            <li><a href="house-party-loyalty-page.html">House</a></li>
+                            <li><a href="senate-party-loyalty-page.html">Senate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h2>Congressmen</h2>
+        <p class="description">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+        <p class="description">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+
+        <!--filters-->
+
+        <div class="filters" id="filters">
+
+            <!--checkboxes-->
+
+            <div class="checkboxes" id="filterByParty">
+                <p>Filter by Party: </p>
+                <label><input type="checkbox" class="checkbox-inline" id="checkbox_republican" name="filterStatus" value="R">Republican</label>
+                <label><input type="checkbox" class="checkbox-inline" id="checkbox_democrat" name="filterStatus" value="D">Democrat</label>
+                <label><input type="checkbox" class="checkbox-inline" id="checkbox_independent" name="filterStatus" value="I">Independent</label>
+            </div>
+
+            <div class="selectors" id="selectors">
+
+                <p>Filter by State: </p>
+                <select id="filterByState">
+                        <option class="selectStatus" value="">--Choose a State--</option>
+                        
+                        
+                    </select>
+
+            </div>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table id="data_table" class="table table-hover">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Congressman's Name</th>
+                        <th>Party Affiliation</th>
+                        <th>State</th>
+                        <th>Years in Office</th>
+                        <th>%Votes w/Party</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="congress_data">
+                </tbody>
+
+            </table>
+            <div class="loader">Loading... please wait</div>
+            <div id="floatingBarsG">
+                <div class="blockG" id="rotateG_01"></div>
+                <div class="blockG" id="rotateG_02"></div>
+                <div class="blockG" id="rotateG_03"></div>
+                <div class="blockG" id="rotateG_04"></div>
+                <div class="blockG" id="rotateG_05"></div>
+                <div class="blockG" id="rotateG_06"></div>
+                <div class="blockG" id="rotateG_07"></div>
+                <div class="blockG" id="rotateG_08"></div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy;2016 TGIF | All Rights Reserved</p>
+        </footer>
+
+    </div>
+    
+    <script type="text/html" id="data-template">
+        {{#members_data}}
+        <tr>
+            
+            <td><a href="{{url}}" class="iframe">{{{full_name}}}</a></td> 
+            <td class="party">{{party}}</td>
+            <td class="state">{{state}}</td>
+            <td>{{seniority}}</td>
+            <td>{{votes_with_party_pct}}</td>
+          
+        </tr>
+        {{/members_data}}
+    </script>
+    <script src="arrangeData.js"></script>
+</body>
+
+</html>
