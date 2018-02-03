@@ -43,9 +43,9 @@ var isAttendancePage = false;
 $(function () {
     var url = '';
     if (window.location.pathname == "/senate_attendance_statistics-page.html" || window.location.pathname == "/senate-party-loyalty-page.html") {
-        url = "https://api.myjson.com/bins/sge7v";
+        url = "https://nytimes-ubiqum.herokuapp.com/congress/113/senate";
     } else if (window.location.pathname == "/house_attendance_statistics-page.html" || window.location.pathname == "/house-party-loyalty-page.html") {
-        url = "https://api.myjson.com/bins/7od7f";
+        url = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
     }
 
     isAttendancePage = window.location.pathname == "/senate_attendance_statistics-page.html" || window.location.pathname == "/house_attendance_statistics-page.html";
